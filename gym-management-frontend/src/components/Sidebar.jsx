@@ -24,7 +24,7 @@ const Sidebar = () => {
     const menuItems = [
         {
             label: "Dashboard",
-            path: "/dashboard",
+            path: "/",
             icon: <DashboardIcon />,
         },
         {

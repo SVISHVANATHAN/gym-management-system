@@ -33,7 +33,7 @@ const Login = () => {
     const token = localStorage.getItem("token");
 
     if (token) {
-      navigate("/dashboard");
+      navigate("/");
     }
   }, [navigate]);
 
@@ -89,7 +89,7 @@ const Login = () => {
 
       localStorage.setItem("token", token);
 
-      navigate("/dashboard");
+      navigate("/");
     } catch (error) {
       setServerError(
         error.response?.data?.message ||

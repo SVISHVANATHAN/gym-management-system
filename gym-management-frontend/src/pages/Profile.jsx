@@ -228,7 +228,7 @@ const Profile = () => {
             >
                 <Button
                     variant="contained"
-                    onClick={() => navigate("/dashboard")}
+                    onClick={() => navigate("/")}
                     sx={{
                         textTransform: "none",
                         fontSize: "0.95rem",

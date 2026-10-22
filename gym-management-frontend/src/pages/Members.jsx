@@ -28,6 +28,9 @@ import {
 
 import SearchIcon from "@mui/icons-material/Search";
 import RefreshIcon from "@mui/icons-material/Refresh";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 import { useEffect, useMemo, useState } from "react";
 import axios from "axios";
@@ -878,49 +881,55 @@ const Members = () => {
                                                 <TableCell>
                                                     <Box
                                                         sx={{
-                                                            display:
-                                                                "flex",
+                                                            display: "flex",
+                                                            alignItems: "center",
                                                             gap: 1,
-                                                            flexWrap:
-                                                                "wrap",
                                                         }}
                                                     >
-                                                        <Button
-                                                            variant="outlined"
+                                                        <IconButton
                                                             size="small"
-                                                            onClick={() =>
-                                                                handleViewMember(
-                                                                    member.id
-                                                                )
-                                                            }
+                                                            title="View member"
+                                                            aria-label={`View ${member.name}`}
+                                                            onClick={() => handleViewMember(member.id)}
+                                                            sx={{
+                                                                color: "#1976D2",
+                                                                "&:hover": {
+                                                                    backgroundColor: "rgba(25, 118, 210, 0.08)",
+                                                                },
+                                                            }}
                                                         >
-                                                            View
-                                                        </Button>
+                                                            <VisibilityIcon fontSize="small" />
+                                                        </IconButton>
 
-                                                        <Button
-                                                            variant="outlined"
+                                                        <IconButton
                                                             size="small"
-                                                            onClick={() =>
-                                                                handleEditMember(
-                                                                    member
-                                                                )
-                                                            }
+                                                            title="Edit member"
+                                                            aria-label={`Edit ${member.name}`}
+                                                            onClick={() => handleEditMember(member)}
+                                                            sx={{
+                                                                color: "#2E7D32",
+                                                                "&:hover": {
+                                                                    backgroundColor: "rgba(46, 125, 50, 0.08)",
+                                                                },
+                                                            }}
                                                         >
-                                                            Edit
-                                                        </Button>
+                                                            <EditIcon fontSize="small" />
+                                                        </IconButton>
 
-                                                        <Button
-                                                            variant="outlined"
+                                                        <IconButton
                                                             size="small"
-                                                            color="error"
-                                                            onClick={() =>
-                                                                handleDeleteMember(
-                                                                    member
-                                                                )
-                                                            }
+                                                            title="Delete member"
+                                                            aria-label={`Delete ${member.name}`}
+                                                            onClick={() => handleDeleteMember(member)}
+                                                            sx={{
+                                                                color: "#D32F2F",
+                                                                "&:hover": {
+                                                                    backgroundColor: "rgba(211, 47, 47, 0.08)",
+                                                                },
+                                                            }}
                                                         >
-                                                            Delete
-                                                        </Button>
+                                                            <DeleteIcon fontSize="small" />
+                                                        </IconButton>
                                                     </Box>
                                                 </TableCell>
                                             </TableRow>
